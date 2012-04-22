@@ -40,3 +40,12 @@ This part of documentation explains background information about pyoauth2, step-
    user/quickstart
 
 
+Developer Guide
+---------------
+
+.. toctree::
+   :maxdepth: 2
+
+   development
+
+
