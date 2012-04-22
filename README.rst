@@ -1,4 +1,4 @@
-:: -*- coding: utf-8; mode: rst -*-
+.. -*- coding: utf-8; mode: rst -*-
 
 Welcome to pyoauth2
 ===================
