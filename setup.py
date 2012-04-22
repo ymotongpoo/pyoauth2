@@ -3,6 +3,8 @@
 import sys
 from setuptools import setup, find_packages
 
+__doc__ = open('README.rst', 'rb').read()
+
 version = '0.0.1'
 
 classifiers=[
