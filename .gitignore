@@ -25,3 +25,10 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+#editor and OS specific
+.DS_Store
+*~
+\#*
+
+
