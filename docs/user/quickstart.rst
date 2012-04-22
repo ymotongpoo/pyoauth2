@@ -40,4 +40,13 @@ Flow instance is the basic object for following OAuth 2.0 procedure.
    credentials = flow.retrieve_token()
    
 
+Variables for ``required_params``, ``extra_auth_params``, ``extra_token_params`` are dictionary which contains parameters for requests to the OAuth 2.0 server such as "Client id", "Client secret", "Redirect URI" and so on. See a complete example for keys and values for them.
+
+
+Example code
+------------
+
+Basically, only 2 objects above are required for authorization. Following code is a small but simple sample code for communicating with YouTube API.
+
+.. literalinclude:: ../../samples/youtube.py
 
