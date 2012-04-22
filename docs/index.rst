@@ -30,5 +30,13 @@ pyoauth2 aims at offering user extensibility for following functions:
 User Guide
 ----------
 
-to be written...
+This part of documentation explains background information about pyoauth2, step-by-step nutsshell and detailed API documents.
+
+.. toctree::
+   :maxdepth: 2
+
+   user/introduction
+   user/installation
+   user/quickstart
+
 
