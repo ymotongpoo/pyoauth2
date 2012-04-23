@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
 
 import sys
-from setuptools import setup, find_packages
+try:
+    from setuptools import setup, Command
+except ImportError:
+    from distutils.core import setup, Command
 
-__doc__ = open('README.rst', 'rb').read()
+short_description = "Simple OAuth 2.0 client library"
+long_description = open('README.rst', 'rb').read()
 
 version = '0.0.2'
 
@@ -19,27 +23,43 @@ classifiers=[
         'Topic :: Utilities',
     ]
 
+"""
+class PyTest(Command):
+    user_options = []
+
+    def initialize_options(self):
+        pass
+
+    def finalize_options(self):
+        pass
+
+    def run(self):
+        import sys, subprocess
+        errno = subprocess.call([sys.executable, 'tests.py'])
+        raise SystemExit(errno)
+"""
+
 setup(
-    name='pyoauth2',
+    name="pyoauth2",
     version=version,
-    url='https://github.com/ymotongpoo/pyoauth2',
+    url=r"https://github.com/ymotongpoo/pyoauth2",
     license='New BSD',
-    author='Yoshifumi YAMAGUCHI',
-    author_email='ymotongpoo@gmall.com',
-    description='Simple OAuth 2.0 client library',
-    long_description=__doc__,
+    author="Yoshifumi YAMAGUCHI",
+    author_email="ymotongpoo at gmall.com",
+    description=short_description,
+    long_description=long_description,
     packages=['pyoauth2'],
     package_data={},
     install_requires=[
         'setuptools',
         'requests>=0.11.1'
         ],
-    extras_require=dict(
+    extras_require = dict(
         test=[
-            'nose>=1.0.0'
-            ],
+            'pytest>=2.2'
+            ]
         ),
-    test_suite='nose.collector',
-    tests_require=['nose']
-)
+    test_suite='test.suite',
+    test_require=['pytest']
+    )
 
