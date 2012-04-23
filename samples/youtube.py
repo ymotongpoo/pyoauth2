@@ -38,7 +38,8 @@ if __name__ == '__main__':
     if credentials is None:
         flow = OAuth2AuthorizationFlow(required_params,
                                        extra_auth_params,
-                                       extra_token_params)
+                                       extra_token_params,
+                                       True)
         flow.retrieve_authorization_code()
         credentials = flow.retrieve_token()
         storage.save(credentials)
