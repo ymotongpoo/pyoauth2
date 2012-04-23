@@ -30,7 +30,7 @@ See LISENCE file for details.
 
 pyoauth2 depends on following modules:
 
-  - `requests`_
+- `requests`_
 
 
 Actually urllib2 can handle same functions as requests but

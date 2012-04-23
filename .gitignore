@@ -19,6 +19,7 @@ pip-log.txt
 # Unit test / coverage reports
 .coverage
 .tox
+__pycache__/*
 
 #Translations
 *.mo
@@ -31,4 +32,5 @@ pip-log.txt
 *~
 \#*
 
-
+# document
+docs/_build/*

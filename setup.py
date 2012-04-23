@@ -23,22 +23,6 @@ classifiers=[
         'Topic :: Utilities',
     ]
 
-"""
-class PyTest(Command):
-    user_options = []
-
-    def initialize_options(self):
-        pass
-
-    def finalize_options(self):
-        pass
-
-    def run(self):
-        import sys, subprocess
-        errno = subprocess.call([sys.executable, 'tests.py'])
-        raise SystemExit(errno)
-"""
-
 setup(
     name="pyoauth2",
     version=version,
