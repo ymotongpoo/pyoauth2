@@ -33,8 +33,9 @@ Flow instance is the basic object for following OAuth 2.0 procedure.
 .. code-block:: python
 
    flow = OAuth2AuthorizationFlow(required_params,
-                                  extra_auth_params,
-                                  extra_token_params)
+                                  extra_auth_params=extra_auth_params,
+                                  extra_token_params=extra_token_params,
+                                  local=True)
 
    flow.retrieve_authorization_code()
    credentials = flow.retrieve_token()
