@@ -12,7 +12,11 @@
 # serve to show the default.
 
 import sys, os
-import pyoauth2
+try:
+    import pyoauth2
+except ImportException:
+    sys.path.append['..']
+    import pyoauth2
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
