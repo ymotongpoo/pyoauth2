@@ -14,7 +14,7 @@
 import sys, os
 try:
     import pyoauth2
-except ImportException:
+except ImportError:
     sys.path.append['..']
     import pyoauth2
 
