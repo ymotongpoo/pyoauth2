@@ -6,7 +6,7 @@ Welcome to pyoauth2
 0. What is pyoauth2 about?
 --------------------------
 
-pyoauth2 provides simple OAuth 2.0 [1]_ client, which enables 
+pyoauth2 provides simple `OAuth 2.0`_ client, which enables 
 easy authorization/authentication to several web service APIs, such as
 Google APIs, Facebook API, Foursquare and so on.
 (Note that Twitter does not provide OAuth 2.0 as of now.)
@@ -15,7 +15,7 @@ This module tries to follow detailed specs on Internet-Draft of OAuth 2.0
 (Candidate replacement of RFC 5849) but as of now it is implemented on a
 visceral level.
 
-.. [1] http://tools.ietf.org/html/draft-ietf-oauth-v2
+.. _OAuth 2.0: http://tools.ietf.org/html/draft-ietf-oauth-v2
 
 
 1. Lisence
@@ -30,14 +30,14 @@ See LISENCE file for details.
 
 pyoauth2 depends on following modules:
 
-  - requests [2]_
+- `requests`_
 
 
 Actually urllib2 can handle same functions as requests but
 in order to realize more simple and readable code, requests
 module was selected for HTTP transaction.
 
-.. [2] http://pypi.python.org/pypi/requests
+.. _requests: http://pypi.python.org/pypi/requests
 
 
 3. Installation
@@ -62,11 +62,12 @@ for installing pyoauth2
 4. Getting Started
 ------------------
 
-to be written...
-
+for detailed document, see http://readthedocs.org/docs/pyoauth2/
 
 
 5. Changelog
 ------------
+
+2012-04-23    version 0.0.2 released
 
 2012-04-20    version 0.0.1 released

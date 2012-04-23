@@ -1,11 +1,17 @@
 # -*- coding: utf-8 -*-
 
 import sys
-from setuptools import setup, find_packages
+try:
+    from setuptools import setup, Command
+except ImportError:
+    from distutils.core import setup, Command
 
-__doc__ = open('README.rst', 'rb').read()
+import pyoauth2
 
-version = '0.0.2'
+short_description = "Simple OAuth 2.0 client library"
+long_description = open('README.rst', 'rb').read()
+
+version = pyoauth2.version
 
 classifiers=[
         'Development Status :: 2 - Pre-Alpha',
@@ -20,26 +26,26 @@ classifiers=[
     ]
 
 setup(
-    name='pyoauth2',
+    name="pyoauth2",
     version=version,
-    url='https://github.com/ymotongpoo/pyoauth2',
+    url=r"https://github.com/ymotongpoo/pyoauth2",
     license='New BSD',
-    author='Yoshifumi YAMAGUCHI',
-    author_email='ymotongpoo@gmall.com',
-    description='Simple OAuth 2.0 client library',
-    long_description=__doc__,
+    author="Yoshifumi YAMAGUCHI",
+    author_email="ymotongpoo at gmall.com",
+    description=short_description,
+    long_description=long_description,
     packages=['pyoauth2'],
     package_data={},
     install_requires=[
         'setuptools',
         'requests>=0.11.1'
         ],
-    extras_require=dict(
+    extras_require = dict(
         test=[
-            'nose>=1.0.0'
-            ],
+            'pytest>=2.2'
+            ]
         ),
-    test_suite='nose.collector',
-    tests_require=['nose']
-)
+    test_suite='test.suite',
+    test_require=['pytest']
+    )
 
