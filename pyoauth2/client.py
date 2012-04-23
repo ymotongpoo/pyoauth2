@@ -83,6 +83,7 @@ class OAuth2AuthorizationFlow(object):
     def __init__(self, required_params,
                  extra_auth_params=None,
                  extra_token_params=None,
+                 local=False,
                  **kwargs):
 
         """
@@ -113,10 +114,10 @@ class OAuth2AuthorizationFlow(object):
         self.authorization_code = None
         self.access_token = None
 
-        self.base_headers = requests.defaults.defaults['base_headers']
+        self.local = local
 
 
-    def retrieve_authorization_code(self):
+    def retrieve_authorization_code(self, redirect_func=None):
         """ retrieve authorization code to get access token
         """
         
@@ -134,11 +135,16 @@ class OAuth2AuthorizationFlow(object):
         r = requests.get(self.auth_uri, params=request_param,
                          allow_redirects=False)
         url = r.headers.get('location') 
-        webbrowser.open_new_tab(url)
-
-        authorization_code = raw_input("Code: ")
-        if self.validate_code(authorization_code):
-            self.authorization_code = authorization_code
+        if self.local:
+            webbrowser.open_new_tab(url)
+            authorization_code = raw_input("Code: ")
+            if self.validate_code(authorization_code):
+                self.authorization_code = authorization_code
+        else:
+            return redirect_func(url)
+            
+    def set_authorization_code(self, authorization_code):
+        self.authorization_code = authorization_code
 
         
     def retrieve_token(self):
@@ -153,8 +159,6 @@ class OAuth2AuthorizationFlow(object):
                 "redirect_uri": self.redirect_uri,
                 "code": self.authorization_code
                 }
-
-            print request_param, urlencode(request_param)
 
             if self._extra_token_params:
                 request_param.update(self._extra_token_params)
@@ -190,14 +194,10 @@ class OAuth2APIRequest(object):
             "Authorization": "OAuth %s" % str(self.access_token)
             }
 
-    def request(self, url, extra_headers={}):
+    def request(self, url, params={}, extra_headers={}):
         headers = {}
         headers.update(self.authorization_header)
         headers.update(extra_headers)
-
-        params = {
-            "oauth_token": self.access_token
-            }
 
         r = requests.get(url, params=params, headers=headers)
         return r.text
