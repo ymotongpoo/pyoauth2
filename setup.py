@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 __doc__ = open('README.rst', 'rb').read()
 
-version = '0.0.1'
+version = '0.0.2'
 
 classifiers=[
         'Development Status :: 2 - Pre-Alpha',
