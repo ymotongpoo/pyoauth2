@@ -6,12 +6,10 @@ try:
 except ImportError:
     from distutils.core import setup, Command
 
-import pyoauth2
-
 short_description = "Simple OAuth 2.0 client library"
 long_description = open('README.rst', 'rb').read()
 
-version = pyoauth2.version
+version = '0.0.3'
 
 classifiers=[
         'Development Status :: 2 - Pre-Alpha',
