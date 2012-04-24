@@ -1,13 +1,25 @@
 # -*- coding: utf-8 -*-
 
 import sys
+import os.path
 try:
     from setuptools import setup, Command
 except ImportError:
     from distutils.core import setup, Command
 
+def read_file(name):
+    path = os.path.join(os.path.dirname(__file__), name)
+    f = open(os.path.abspath(path), 'r')
+    data = f.read()
+    f.close()
+    return data
+
 short_description = "Simple OAuth 2.0 client library"
-long_description = open('README.rst', 'rb').read()
+
+try:
+    long_description = read_file('README.rst'),
+except IOError:
+    long_description = ""
 
 version = '0.0.3'
 

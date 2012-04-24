@@ -68,6 +68,16 @@ for detailed document, see http://readthedocs.org/docs/pyoauth2/
 5. Changelog
 ------------
 
+2012-04-25    version 0.0.4 released
+
+2012-04-24    version 0.0.3 released
+  
+  * enabled server side usage
+
 2012-04-23    version 0.0.2 released
 
+  * fixed sample
+
 2012-04-20    version 0.0.1 released
+
+  * first release
