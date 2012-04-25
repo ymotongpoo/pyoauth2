@@ -15,7 +15,6 @@ import os
 import os.path
 import webbrowser
 
-
 REDIRECT_URI = 'urn:ietf:wg:oauth:2.0:oob'
 
 class Storage(object):
@@ -52,7 +51,7 @@ class FileStorage(Storage):
                 try:
                     data = json.load(f)
                     return data
-                except ValueError, e:
+                except ValueError as e:
                     return None
         else:
             return None
@@ -64,7 +63,7 @@ class FileStorage(Storage):
             fpr = open(self.filename, 'r+')
             try:
                 stored_data = json.load(fpr)
-            except ValueError, e:
+            except ValueError as e:
                 raise ValueError(e)
             else:
                 fpr.close()
