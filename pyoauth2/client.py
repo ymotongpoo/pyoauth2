@@ -9,7 +9,10 @@ __all__ = ['OAuth2AuthenticationFlow',
 
 import requests
 
-from urllib import urlencode
+try:
+    from urllib import urlencode
+except:
+    from urllib.parse import urlencode
 import json
 import os
 import os.path
