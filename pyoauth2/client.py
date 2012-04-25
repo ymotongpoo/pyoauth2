@@ -175,8 +175,8 @@ class OAuth2AuthorizationFlow(object):
             return self.access_token
 
         else:
-            print "authorization code is required before getting accesss token"
-            print "Please call retrieve_authorization_code() beforehand"
+            print("authorization code is required before getting accesss token")
+            print("Please call retrieve_authorization_code() beforehand")
 
 
     def validate_code(self, code):
