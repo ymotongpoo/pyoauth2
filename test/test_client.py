@@ -2,7 +2,13 @@
 
 from pyoauth2.client import FileStorage
 
-def test_filestorage___init__():
-    filename = "test.dat"
-    test_storage = FileStorage(filename)
-    assert test_storage.filename == filename
+class TestFileStorage___init__():
+    def test_normal():
+        filename = "test.dat"
+        test_storage = FileStorage(filename)
+        assert test_storage.filename == filename
+
+
+def test_filestorage_get():
+    test_storage = FileStorage()
+    assert test_storage.get() is None

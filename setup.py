@@ -51,11 +51,13 @@ setup(
     package_data={},
     install_requires=[
         'setuptools',
-        'requests>=0.11.1'
+        'requests>=0.11.1',
         ],
     extras_require = dict(
         test=[
-            'pytest>=2.2'
+            'pytest>=2.2',
+            'coverage>=3.5',
+            'mock>=0.8.0'
             ]
         ),
     test_suite='test.suite',
