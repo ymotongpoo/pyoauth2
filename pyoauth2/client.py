@@ -45,8 +45,6 @@ class FileStorage(Storage):
     def __init__(self, filename):
         Storage.__init__(self)
         self.filename = filename
-        self.elements = [unicode(e) for e in self.elements]
-
         
     def get(self):
         if os.path.exists(self.filename):
