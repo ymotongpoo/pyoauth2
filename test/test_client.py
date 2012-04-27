@@ -46,30 +46,30 @@ class TestFileStorage_save(object):
         pass
 
 
-class OAuth2AuthorizationFlow__init__(object):
+class TestOAuth2AuthorizationFlow__init__(object):
     pass
 
 
-class OAuth2AuthorizationFlow_retrieve_authorization_code(object):
+class TestOAuth2AuthorizationFlow_retrieve_authorization_code(object):
     pass
 
 
-class OAuth2AuthorizationFlow_set_authorization_code(object):
+class TestOAuth2AuthorizationFlow_set_authorization_code(object):
     pass
 
 
-class OAuth2AuthorizationFlow_retrieve_token(object):
+class TestOAuth2AuthorizationFlow_retrieve_token(object):
     pass
 
 
-class OAuth2AuthorizationFlow_validate_code(object):
+class TestOAuth2AuthorizationFlow_validate_code(object):
     pass
 
 
-class OAuth2APIRequest__init__(object):
+class TestOAuth2APIRequest__init__(object):
     pass
 
 
-class OAuth2APIRequest_request(object):
+class TestOAuth2APIRequest_request(object):
     pass
 
