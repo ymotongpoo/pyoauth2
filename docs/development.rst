@@ -18,9 +18,9 @@ In order to take part in the project, please make sure to follow the procedure:
 Authors
 =======
 
-pyoauth2 is written and maintained by Yoshifumi YAMAGUCHI (`@ymotongpoo`_).
+pyoauth2 is written and maintained by Yoshifumi YAMAGUCHI (`Yoshifumi YAMAGUCHI`_).
 
-.. _@ymotongpoo: https://twitter.com/#!/ymotongpoo
+.. _Yoshifumi YAMAGUCHI: https://plus.google.com/114892104481751903211/about
 
 Main Author
 -----------
@@ -33,11 +33,19 @@ Packages
 
 pyoauth2 depends on a module and appreciates contributers for them.
 
-- Requests
+- `Requests`_ for HTTP communication
 
   - Kenneth Reitz and so on
 
-- Urllib3
+- `pytest`_ for test
 
-  - Andrey Petrov
+  - Holger Krekel
 
+- `Mock`_ for test
+
+  - Michael Foord (`@voidspace`_)
+
+.. _Requests: http://docs.python-requests.org/en/latest/index.html
+.. _pytest: http://pytest.org/latest/
+.. _Mock: http://www.voidspace.org.uk/python/mock/
+.. _@voidspace: http://twitter.com/#!/voidspace

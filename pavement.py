@@ -26,7 +26,7 @@ def all():
 
 @task
 def build():
-    for f in [test, docs]:
+    for f in [test_all, docs]:
         os.chdir(project_root)
         f()
     print "Complete building!"
@@ -41,7 +41,12 @@ def docs():
 @task
 def test():
     os.chdir(project_root)
-    sh("python setup.py test")
+    sh("py.test test")
+
+@task
+def test_all():
+    os.chdir(project_root)
+    sh("tox")
 
 
 @task

@@ -9,12 +9,14 @@ __all__ = ['OAuth2AuthenticationFlow',
 
 import requests
 
-from urllib import urlencode
+try:
+    from urllib import urlencode
+except:
+    from urllib.parse import urlencode
 import json
 import os
 import os.path
 import webbrowser
-
 
 REDIRECT_URI = 'urn:ietf:wg:oauth:2.0:oob'
 
@@ -43,16 +45,15 @@ class FileStorage(Storage):
     def __init__(self, filename):
         Storage.__init__(self)
         self.filename = filename
-        self.elements = [unicode(e) for e in self.elements]
-
         
     def get(self):
         if os.path.exists(self.filename):
             with open(self.filename, 'rb') as f:
                 try:
-                    data = json.load(f)
+                    content = f.read().decode()
+                    data = json.loads(content)
                     return data
-                except ValueError, e:
+                except ValueError as e:
                     return None
         else:
             return None
@@ -64,7 +65,7 @@ class FileStorage(Storage):
             fpr = open(self.filename, 'r+')
             try:
                 stored_data = json.load(fpr)
-            except ValueError, e:
+            except ValueError as e:
                 raise ValueError(e)
             else:
                 fpr.close()
@@ -176,8 +177,8 @@ class OAuth2AuthorizationFlow(object):
             return self.access_token
 
         else:
-            print "authorization code is required before getting accesss token"
-            print "Please call retrieve_authorization_code() beforehand"
+            print("authorization code is required before getting accesss token")
+            print("Please call retrieve_authorization_code() beforehand")
 
 
     def validate_code(self, code):
