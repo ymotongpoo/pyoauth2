@@ -21,7 +21,7 @@ try:
 except IOError:
     long_description = ""
 
-version = '0.0.3'
+version = '0.0.4'
 
 classifiers=[
         'Development Status :: 2 - Pre-Alpha',
