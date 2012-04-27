@@ -50,7 +50,8 @@ class FileStorage(Storage):
         if os.path.exists(self.filename):
             with open(self.filename, 'rb') as f:
                 try:
-                    data = json.load(f)
+                    content = f.read().decode()
+                    data = json.loads(content)
                     return data
                 except ValueError as e:
                     return None
