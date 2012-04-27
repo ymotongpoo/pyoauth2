@@ -68,7 +68,9 @@ for detailed document, see http://readthedocs.org/docs/pyoauth2/
 5. Changelog
 ------------
 
-2012-04-25    version 0.0.4 released
+2012-04-27    version 0.0.4 released
+
+  * started Python 3 support
 
 2012-04-24    version 0.0.3 released
   

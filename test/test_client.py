@@ -2,9 +2,10 @@
 
 from pyoauth2.client import FileStorage
 
+import mock
+
 from random import choice
 from string import printable
-
 import os.path
 
 
@@ -19,9 +20,9 @@ test_credential = {
 
 class TestFileStorage___init__(object):
     def test_normal(self):
-        filename = "dummy.dat"
-        test_storage = FileStorage(filename)
-        assert test_storage.filename == filename
+        m = mock.Mock()
+        test_storage = FileStorage(m.filename)
+        assert test_storage.filename == m.filename
 
     def test_irregular(self):
         pass
@@ -43,3 +44,32 @@ class TestFileStorage_save(object):
 
     def test_normal(self):
         pass
+
+
+class OAuth2AuthorizationFlow__init__(object):
+    pass
+
+
+class OAuth2AuthorizationFlow_retrieve_authorization_code(object):
+    pass
+
+
+class OAuth2AuthorizationFlow_set_authorization_code(object):
+    pass
+
+
+class OAuth2AuthorizationFlow_retrieve_token(object):
+    pass
+
+
+class OAuth2AuthorizationFlow_validate_code(object):
+    pass
+
+
+class OAuth2APIRequest__init__(object):
+    pass
+
+
+class OAuth2APIRequest_request(object):
+    pass
+
