@@ -25,7 +25,7 @@ version = '0.0.4'
 
 classifiers=[
         'Development Status :: 2 - Pre-Alpha',
-        'Environment :: Console'
+        'Environment :: Console',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
@@ -34,7 +34,7 @@ classifiers=[
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.1',
         'Programming Language :: Python :: 3.2',
-        'Topic :: Software Development :: Libraries'
+        'Topic :: Software Development :: Libraries',
         'Topic :: Utilities',
     ]
 
@@ -61,6 +61,6 @@ setup(
             ]
         ),
     test_suite='test.suite',
-    test_require=['pytest']
+    tests_require=['pytest']
     )
 
